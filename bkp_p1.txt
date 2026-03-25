@@ -1,0 +1,9 @@
+Create a detailed documentation on database disaster recovery (DR) using Cohesity Backup, specifically focused on recovery time objectives (RTOs) in the event of a cybersecurity incident (e.g., ransomware attack).
+The documentation should:
+* Describe the overall DR strategy leveraging Cohesity for database recovery.
+* Explain how Cohesity protects data from cyber threats and supports immutable backups.
+* Include the results of a recovery test performed in a lower environment, detailing steps, timing, and outcomes.
+* Extrapolate recovery estimates for production based on those test results, explicitly stating the assumptions and scaling factors used.
+* Provide definitions and guidance on RTO, RPO, and validation metrics relevant to audit and compliance review.
+* Summarize the testing methodology, limitations, and next steps for continuous improvement.
+The tone should be professional and audit-ready, with clear sections (e.g., Overview, Test Summary, Findings, Extrapolated Production Estimates, Recommendations). Include tables or timelines where relevant. I would like to create these documentation in confluence.
