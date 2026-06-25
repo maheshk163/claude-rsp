@@ -1,0 +1,270 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .wrap { padding: 1rem 0; }
+  .hero { background: var(--surface-1); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; border: 0.5px solid var(--border); }
+  .hero-title { font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 4px; }
+  .hero-sub { font-size: 14px; color: var(--text-secondary); }
+  .meta-row { display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+  .meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); }
+  .meta-item i { font-size: 16px; color: var(--text-accent); }
+  .section { margin-bottom: 1.5rem; }
+  .section-head { display: flex; align-items: center; gap: 8px; margin-bottom: 0.75rem; }
+  .section-num { width: 24px; height: 24px; border-radius: 50%; background: var(--bg-accent); color: var(--text-accent); font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-title { font-size: 16px; font-weight: 500; color: var(--text-primary); }
+  .section-time { font-size: 12px; color: var(--text-muted); background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 20px; padding: 2px 10px; margin-left: auto; white-space: nowrap; }
+  .card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+  .card-label { font-size: 11px; font-weight: 500; color: var(--text-accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 5px; }
+  .card-label i { font-size: 14px; }
+  .script-box { background: var(--surface-2); border-left: 3px solid var(--border-accent); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin: 0.5rem 0; }
+  .script-text { font-size: 14px; color: var(--text-primary); line-height: 1.7; font-family: var(--font-voice); }
+  .talking-points { list-style: none; margin-top: 0.5rem; }
+  .talking-points li { font-size: 13px; color: var(--text-secondary); line-height: 1.6; padding: 3px 0 3px 20px; position: relative; }
+  .talking-points li::before { content: "→"; position: absolute; left: 0; color: var(--text-accent); font-size: 12px; top: 4px; }
+  .tip-box { background: var(--bg-warning); border: 0.5px solid var(--border-warning); border-radius: 8px; padding: 0.6rem 0.9rem; margin-top: 0.5rem; display: flex; gap: 8px; align-items: flex-start; }
+  .tip-box i { color: var(--text-warning); font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+  .tip-text { font-size: 13px; color: var(--text-warning); line-height: 1.5; }
+  .nav-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .nav-btn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: var(--surface-2); color: var(--text-secondary); cursor: pointer; transition: all 0.15s; }
+  .nav-btn:hover, .nav-btn.active { background: var(--bg-accent); color: var(--text-accent); border-color: var(--border-accent); }
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .ov-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; }
+  .ov-num { font-size: 22px; font-weight: 500; color: var(--text-accent); }
+  .ov-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .section-group { display: none; }
+  .section-group.visible { display: block; }
+  .divider { height: 0.5px; background: var(--border); margin: 1rem 0; }
+  .screen-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; background: var(--bg-success); color: var(--text-success); border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
+  .screen-badge i { font-size: 12px; }
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only">Cohesity platform demo script and talking points guide</h2>
+
+  <div class="hero">
+    <div class="hero-title">Cohesity Platform — Demo Script & Talking Points</div>
+    <div class="hero-sub">A complete guide for recording your walkthrough video</div>
+    <div class="meta-row">
+      <div class="meta-item"><i class="ti ti-clock" aria-hidden="true"></i> Target: 4–6 minutes</div>
+      <div class="meta-item"><i class="ti ti-sections" aria-hidden="true"></i> 5 sections</div>
+      <div class="meta-item"><i class="ti ti-device-desktop" aria-hidden="true"></i> Screen recording</div>
+      <div class="meta-item"><i class="ti ti-microphone" aria-hidden="true"></i> Narrated voiceover</div>
+    </div>
+  </div>
+
+  <div class="overview-grid">
+    <div class="ov-card"><div class="ov-num">~45s</div><div class="ov-label">Intro & orientation</div></div>
+    <div class="ov-card"><div class="ov-num">~60s</div><div class="ov-label">Protection Group</div></div>
+    <div class="ov-card"><div class="ov-num">~60s</div><div class="ov-label">Policy & WORM</div></div>
+    <div class="ov-card"><div class="ov-num">~75s</div><div class="ov-label">Helios dashboard</div></div>
+    <div class="ov-card"><div class="ov-num">~45s</div><div class="ov-label">Recovery demo</div></div>
+  </div>
+
+  <div class="nav-row" id="nav">
+    <button class="nav-btn active" onclick="show('all')">All sections</button>
+    <button class="nav-btn" onclick="show('s1')">1 · Intro</button>
+    <button class="nav-btn" onclick="show('s2')">2 · Protection Group</button>
+    <button class="nav-btn" onclick="show('s3')">3 · Policy & WORM</button>
+    <button class="nav-btn" onclick="show('s4')">4 · Helios dashboard</button>
+    <button class="nav-btn" onclick="show('s5')">5 · Recovery</button>
+    <button class="nav-btn" onclick="show('tips')">Recording tips</button>
+  </div>
+
+  <div id="all-view">
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num">1</div>
+        <div class="section-title">Intro & Helios orientation</div>
+        <div class="section-time"><i class="ti ti-clock" aria-hidden="true"></i> ~45 sec</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-player-play" aria-hidden="true"></i> What to show on screen</div>
+        <ul class="talking-points">
+          <li>Open Cohesity Helios at the main dashboard landing page</li>
+          <li>Show the global cluster/node overview — all systems green</li>
+          <li>Hover over the Oracle source count to confirm it's registered</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-quote" aria-hidden="true"></i> Script</div>
+        <div class="script-box">
+          <p class="script-text">"This is Cohesity Helios — our unified control plane for all Oracle database backups. What you're looking at is a single dashboard that replaces the scattered cron emails and manual log checks we used to rely on. Every cluster, every Oracle source, every job — visible right here. Let me walk you through how it works."</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-bulb" aria-hidden="true"></i>
+        <span class="tip-text">Before recording: clear your browser notifications, set Helios to full screen, and zoom to 110% so text is readable in the recording.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num">2</div>
+        <div class="section-title">Protection Group setup <span class="screen-badge"><i class="ti ti-eye" aria-hidden="true"></i> key moment</span></div>
+        <div class="section-time"><i class="ti ti-clock" aria-hidden="true"></i> ~60 sec</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-player-play" aria-hidden="true"></i> What to show on screen</div>
+        <ul class="talking-points">
+          <li>Navigate to Data Protection → Protection Groups</li>
+          <li>Click into an existing Oracle Protection Group (don't create a new one — faster to show a live configured one)</li>
+          <li>Highlight the Oracle source list — show which databases are included</li>
+          <li>Show the schedule tab — daily incremental, weekly baseline</li>
+          <li>Point out the Cohesity Agent connection status (green = healthy)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-quote" aria-hidden="true"></i> Script</div>
+        <div class="script-box">
+          <p class="script-text">"Here's our Oracle Protection Group. This replaced every custom RMAN bash script we had. The Cohesity Agent connects natively to Oracle — it supports standalone instances, RAC, and ASM — with zero custom scripting on our end. You can see the databases enrolled here. The schedule is set to incremental forever — meaning after the initial full baseline, we only ever move changed data blocks. That's what shrunk our backup window from 8 to 12 hours down to 30 to 45 minutes."</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-bulb" aria-hidden="true"></i>
+        <span class="tip-text">Move your mouse slowly and deliberately when hovering over UI elements. Audiences lose track of fast cursor movement on recordings.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num">3</div>
+        <div class="section-title">Policy configuration & WORM immutability <span class="screen-badge"><i class="ti ti-eye" aria-hidden="true"></i> key moment</span></div>
+        <div class="section-time"><i class="ti ti-clock" aria-hidden="true"></i> ~60 sec</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-player-play" aria-hidden="true"></i> What to show on screen</div>
+        <ul class="talking-points">
+          <li>Navigate to the Protection Policy attached to your Oracle group</li>
+          <li>Show the retention settings — highlight the WORM lock period field</li>
+          <li>Show the DataLock / SnapLock toggle — confirm it is enabled</li>
+          <li>If possible, try to delete or modify a locked snapshot — show that the action is blocked</li>
+          <li>Show the "Locked until" timestamp on a completed snapshot</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-quote" aria-hidden="true"></i> Script</div>
+        <div class="script-box">
+          <p class="script-text">"This is where compliance is enforced. Our Protection Policy has DataLock enabled — that's Cohesity's WORM implementation. Once a snapshot is taken, it's locked for the retention period you see here. And I mean locked — watch what happens if I try to delete it. The platform refuses. Not even a Cohesity admin account can override this during the lock window. This is exactly what our previous NFS setup could not do — and it's what makes us audit-ready."</p>
+        </div>
+        <ul class="talking-points" style="margin-top: 0.75rem;">
+          <li>If you can't demo a live deletion attempt, just point to the lock icon on the snapshot and state: "This padlock icon means this snapshot is legally immutable until the date shown."</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+        <span class="tip-text">This is the most important 20 seconds of the entire video. Pause slightly before and after the WORM demo moment to let it land.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num">4</div>
+        <div class="section-title">Helios monitoring dashboard</div>
+        <div class="section-time"><i class="ti ti-clock" aria-hidden="true"></i> ~75 sec</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-player-play" aria-hidden="true"></i> What to show on screen</div>
+        <ul class="talking-points">
+          <li>Go to the Helios global dashboard — show the job success/failure timeline</li>
+          <li>Click into a completed Oracle backup job — show the run details: duration, data transferred, dedup ratio</li>
+          <li>Navigate to Alerts — show the alerting configuration (email / webhook / SNMP)</li>
+          <li>Show the Data Reduction section — highlight the global dedup ratio number</li>
+          <li>If visible, show the anomaly detection / security panel</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-quote" aria-hidden="true"></i> Script</div>
+        <div class="script-box">
+          <p class="script-text">"Before Cohesity, verifying backup health meant SSH-ing into servers and grepping through log files. Now this is what we see every morning — a single view across every Oracle environment. Here's last night's run for our production database: job duration, data transferred, and the dedup ratio — you can see we're achieving over 3 to 1 data reduction globally, which directly reduces storage costs. Alerts fire immediately if anything deviates — email, webhook, SNMP — before a human would ever notice a problem. And this anomaly detection panel uses machine learning to flag unusual data patterns like sudden large-scale encryption, which is the signature of ransomware."</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-bulb" aria-hidden="true"></i>
+        <span class="tip-text">When reading the dedup ratio number on screen, pause on it for 2 seconds before speaking. Let the audience see it before you explain it.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num">5</div>
+        <div class="section-title">Recovery workflow <span class="screen-badge"><i class="ti ti-eye" aria-hidden="true"></i> key moment</span></div>
+        <div class="section-time"><i class="ti ti-clock" aria-hidden="true"></i> ~45 sec</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-player-play" aria-hidden="true"></i> What to show on screen</div>
+        <ul class="talking-points">
+          <li>Go to Data Protection → Recover → Oracle</li>
+          <li>Select a source database and show the snapshot calendar — multiple restore points visible</li>
+          <li>Show the recovery options: full DB restore, table-level, or clone</li>
+          <li>Initiate a test clone to a non-production target (ideal) — or just show the recovery wizard up to the confirmation screen without executing</li>
+          <li>If a recovery was previously done, navigate to the job history and show a completed recovery run time</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-label"><i class="ti ti-quote" aria-hidden="true"></i> Script</div>
+        <div class="script-box">
+          <p class="script-text">"Finally, recovery — which was the most painful part of our old setup. To restore from legacy backups, we'd manually locate the right backup pieces on the NFS share, figure out the correct RMAN sequence, and pull everything back over the network. It could take hours. With Cohesity, I select the database, pick a point-in-time snapshot from this calendar, choose where to recover to — and the data is already local and indexed. Recovery goes from hours to minutes. For dev and QA, we can even spin up a zero-storage clone of a multi-terabyte database instantly, without touching production."</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <i class="ti ti-bulb" aria-hidden="true"></i>
+        <span class="tip-text">End the recording here with a clean pause, then stop. Don't trail off — a confident stop is better than a long outro.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="section-num" style="background: var(--bg-success); color: var(--text-success);">✓</div>
+        <div class="section-title">Before you hit record — checklist</div>
+      </div>
+      <div class="card">
+        <ul class="talking-points">
+          <li>Set screen resolution to 1920×1080, browser zoom to 110%</li>
+          <li>Use a quiet room — mic quality matters more than camera</li>
+          <li>Do one full dry run from start to finish before recording</li>
+          <li>Have all Helios tabs pre-loaded and ready to switch to</li>
+          <li>Use a tool like OBS, Loom, or QuickTime for screen capture with voiceover</li>
+          <li>Speak 20% slower than feels natural — recordings always sound faster on playback</li>
+          <li>Keep the cursor visible and moving intentionally — don't let it drift</li>
+          <li>If you stumble, pause for 2 seconds and restart that sentence — easy to edit out</li>
+          <li>Aim for 4–5 min total — tight is better than thorough for a presentation insert</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
